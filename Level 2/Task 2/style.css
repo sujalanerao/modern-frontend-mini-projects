@@ -1,0 +1,119 @@
+/* --- 1. GENERAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* --- 2. NAVIGATION BAR (DESKTOP DEFAULT) --- */
+.navbar {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Side by side on Desktop */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #3498db;
+}
+
+/* Hide the Checkbox and Hamburger Icon on Desktop */
+.nav-toggle {
+    display: none;
+}
+.nav-toggle-label {
+    display: none; 
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* --- 3. PAGE CONTENT --- */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #3498db;
+    color: white;
+}
+
+.container {
+    display: flex; /* Creates a row layout */
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1; /* Each card takes equal width */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   --- 4. MEDIA QUERIES (MOBILE STYLES) ---
+   This runs ONLY if screen is smaller than 768px
+   ========================================= */
+@media screen and (max-width: 768px) {
+
+    /* A. Responsive Navigation (Hamburger) */
+    .nav-toggle-label {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        position: absolute;
+        top: 60px; /* Push below header */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .nav-links li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        border-bottom: 1px solid #444;
+    }
+
+    /* B. The "Checkbox Hack" Logic */
+    /* When input is checked, find the sibling .nav-links and display it */
+    #nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* C. Responsive Grid (Stacking the cards) */
+    .container {
+        flex-direction: column; /* Switch from Row to Column */
+    }
+}

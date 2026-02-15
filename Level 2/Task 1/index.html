@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2 Task 1: Frameworks</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 { margin-bottom: 2rem; }
+        .button-container { display: flex; gap: 20px; }
+        
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            transition: transform 0.2s, opacity 0.2s;
+            border: 2px solid white;
+        }
+
+        .btn-bulma { background-color: #00d1b2; } /* Bulma's primary color */
+        .btn-bootstrap { background-color: #7952b3; } /* Bootstrap's primary color */
+
+        .btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Frontend Frameworks Showcase</h1>
+    <p>Select a project to view:</p>
+
+    <div class="button-container">
+        <a href="bulma-card.html" class="btn btn-bulma">View Bulma Card</a>
+
+        <a href="bootstrap-grid.html" class="btn btn-bootstrap">View Bootstrap Grid</a>
+    </div>
+
+</body>
+</html>
